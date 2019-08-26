@@ -1,0 +1,23 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+    commands:
+      - echo Install phase
+      - env | sort
+  pre_build:
+    commands:
+      - echo Pre build phase...
+      - if $CODEBUILD_CI; then echo This line is executed only in the real CodeBuild environment; fi
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo This is artifact > artifact.txt
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+    files:
+      - artifact.txt
+

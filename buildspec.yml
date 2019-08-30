@@ -6,6 +6,7 @@ phases:
     commands:
       - echo Install phase
       - env | sort
+      - echo $CODEBUILD_WEBHOOK_HEAD_REF
   pre_build:
     commands:
       - echo Pre build phase...

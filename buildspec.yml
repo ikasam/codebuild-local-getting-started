@@ -7,6 +7,7 @@ phases:
       - echo Install phase
       - env | sort
       - echo $CODEBUILD_WEBHOOK_HEAD_REF
+      - echo $CODEBUILD_WEBHOOK_TRIGGER
   pre_build:
     commands:
       - echo Pre build phase...
